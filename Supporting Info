@@ -1,0 +1,21 @@
+DATABASE DETAILS FOR: SCENARIOS FOR RENEWABLE ENERGY ADOPTION
+
+Before  collecting data from expert participants, the researcher created a database (named xxxx_scenario, where xxxx represents the researcher’s username on the cloud service being used) 
+and the relevant tables to store participant data. The database consists of three tables: 
+•	EXPERTS: This has 2 fields:
+o	expert_id: Stores a unique identifier for each expert, consisting of the letter "E" followed by a counter value.
+o	criteria: Stores a string of “Y” (yes) and “N” (no) values, indicating whether the expert meets the corresponding criteria.
+•	FACTORS_ENERGY : This table contains three fields:
+o	factor: Stores the factor number (e.g.,1, 2, 3, etc)
+o	f_desc: Stores the factor name, which will be used in the questions presented to participants.
+o	f_explain: Provides a more detailed explanation of each factor, displayed as tooltip text in the online tool.
+•	RELATIONSHIPS: This table has 2 fields:
+o	H-relationship: Stores the string of judgments submitted by experts for the “high” state of the independent factor on all other dependent factors.
+o	L-relationship: Stores the string of judgments for the “low” state of the independent factor on all other dependent factors.
+
+The EXPERTS and RELATIONSHIPS tables are populated as experts complete the surveys. 
+The FACTORS_ENERGY table is populated by the researcher before releasing the link to the online tool. This is done using a researcher-developed PHP script (getfactors.php) 
+and the relevant Excel .csv file (energyfactors.csv) as input. The algorithm behind this process is detailed in Chapter 3, section 3.4.3.1 ).   
+The PHP code and associated Excel .csv files are available at https://github.com/robyn-thompson/RE_Adop_files. 
+The .csv file contains the names and descriptions of each factor, which are aligned with those presented in Table 13 of the thesis.  
+These descriptions are used to populate the tooltip text, which appears on each judgment entry screen for the factors.
